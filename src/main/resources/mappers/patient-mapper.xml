@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="patient">
+    <insert id="insertPatient">
+        insert into patient (name, birth, gender, symptom, roomNum, hospDate, discDate)
+        values
+        (#{name} , #{birth} , #{gender} , #{symptom}, #{roomNum}, #{hospDate}, #{discDate})
+    </insert>
+    <update id="updatePatient">
+        update patient
+        set name=#{name} , birth=#{birth} , gender=#{gender} , symptom=#{symptom}, roomNum=#{roomNum}, hospDate=#{hospDate}, discDate=#{discDate}
+        where id=#{id}
+    </update>
+    <delete id="deletePatient">
+        delete from patient where id=#{id}
+    </delete>
+    <select id="getPatient" resultType="patient">
+        select * from patient where id=#{id}
+    </select>
+    <select id="getPatientList" resultType="patient">
+        select * from patient order by id desc
+    </select>
+</mapper>
