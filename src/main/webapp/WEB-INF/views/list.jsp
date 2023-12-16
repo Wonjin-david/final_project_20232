@@ -54,7 +54,9 @@
 <body>
 <h1>환자 목록</h1>
 
-    <button type="submit" onclick="location.href='redirect:login/logout'">logout</button>
+    <form method="post" action="../login/logout">
+        <button type = 'submit'>logout</button>
+    </form>
 
 <table id ="list" width ="90%">
     <tr>
